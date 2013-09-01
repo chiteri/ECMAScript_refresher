@@ -32,3 +32,23 @@ DOM_PARSER.getElementsByAttribute = function (att, value) {
 
     return results; 
 };
+
+//Define a function that sets a DOM node's colour to yellow and then 
+// fades it to white. This is to teach ``Closure'' concepts in JS.  
+DOM_PARSER.fade = function (node) { 
+    var level = 1; 
+    var step = function () { 
+        var hex = level.toString(16); 
+        
+        node.style.backgroundColour = '#FFFF'+hex+hex; 
+        // document.writeln('<p>The value of colur is #ffff'+hex+hex+'</p>');
+
+        if (level < 15) { 
+            level += 1; 
+            setTimeout(step, 100);
+        } 
+    }; 
+    setTimeout(step, 100);  
+}; // End function DOM_PASER.fade
+
+DOM_PARSER.fade(document.body); 
