@@ -19,5 +19,9 @@ HANOI.towers_of_hanoi = function (disc, src, aux, dest) {
 
 }; // End function towers_of_hanoi 
 
+// Collect the input value from the user, the number of discs you want to arrange 
+HANOI.discs = prompt("How many discs would you like to move around?", "Enter the number of discs here"); 
+document.writeln('You are going to move '+HANOI.discs+' discs around. <br />+++++++++++++++++++++++++++++');
+
 // Invoke your newly created funtion 
-HANOI.towers_of_hanoi(5, 'Src', 'Aux', 'Dest');
+HANOI.towers_of_hanoi(HANOI.discs, 'Src', 'Aux', 'Dest');

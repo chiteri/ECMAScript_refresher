@@ -10,7 +10,7 @@ DOM_PARSER.walk_the_DOM = function walk(node, func) {
     node = node.firstChild; 
     
     while(node) { 
-        walk(node, func); 
+        DOM_PARSER.walk(node, func); 
         node = node.nextSibling;
     } // End while   
 };
@@ -41,7 +41,7 @@ DOM_PARSER.fade = function (node) {
         var hex = level.toString(16); 
         
         node.style.backgroundColour = '#FFFF'+hex+hex; 
-        // document.writeln('<p>The value of colur is #ffff'+hex+hex+'</p>');
+        document.writeln('<p>The value of colur is #ffff'+hex+hex+'</p>');
 
         if (level < 15) { 
             level += 1; 
